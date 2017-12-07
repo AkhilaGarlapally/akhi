@@ -13,5 +13,12 @@ pipeline {
 		 echo "${params.mychoice}"
 		 }
 	}
+         stage('string') {
+	      steps {
+	       echo "flag: ${params.userflag}"
+		 echo "${params.Greeting}World!"
+		 echo "${params.mychoice}"
+		 }
+	}
 }
 }
