@@ -2,11 +2,17 @@ pipeline {
      agent any
      parameters {
         string(name: 'Greeting', defaultValue: 'Hello', description: 'How r u')
+	booleanParam(name: 'Rebuild_Database', defaultValue: '', description:'should we rebuild the database?')
+	booleanParam(name: 'Deploy', defaultvalue: '', description: 'should we deploy the application?')
+	choice(name: 'ENVIRONMENT', defaultvalue: 'integration', description: 'Used for posgress.sh and CodeDeploy deployment group')
 	}
      stages{
          stage('Example') {
 	     steps {
 	        echo "${params.Greeting}World!"
+		echo "${params.Deploy}"
+		echo "${params.Rebuild_Database}"
+		echo "${params.ENVIRONMENT}"
 		}
 	}
 }       
