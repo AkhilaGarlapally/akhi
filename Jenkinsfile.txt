@@ -3,7 +3,7 @@ pipeline {
      parameters {
           string(name: 'BRANCH', defaultValue: 'default', description: 'select branch name')
 	  booleanParam(defaultValue: True, description:'should we rebuild the database?', name: 'Rebuild_Database')
-	  booleanParam(defaultvalue: True, description: 'should we deploy the application?', name: 'Deploy')
+	  booleanParam(defaultValue: True, description: 'should we deploy the application?', name: 'Deploy')
 	  choice(choices: 'integration', description: 'Used for posgress.sh and CodeDeploy deployment group', name: 'ENVIRONMENT')
 	}
      stages{
