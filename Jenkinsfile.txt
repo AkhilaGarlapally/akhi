@@ -1,24 +1,14 @@
 pipeline {
      agent any
      parameters {
-         booleanParam(defaultValue: true, description:'', name:'userflag')
-	 string(name: 'Greeting', defaultValue: 'Hello', description: 'How r u')
-	 choice(name: 'mychoice', choices: mychoices)
-	 }
+        string(name: 'Greeting', defaultValue: 'Hello', description: 'How r u')
+	}
      stages{
          stage('Example') {
 	     steps {
-	         echo "flag: ${params.userflag}"
+	        
 		 echo "${params.Greeting}World!"
-		 echo "${params.mychoice}"
-		 }
+		}
 	}
-         stage('string') {
-	      steps {
-	       echo "flag: ${params.userflag}"
-		 echo "${params.Greeting}World!"
-		 echo "${params.mychoice}"
-		 }
-	}
-}
+}       
 }
