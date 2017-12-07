@@ -6,7 +6,7 @@ pipeline {
 	 choice(name: 'mychoice', choices: mychoices)
 	 }
      stages{
-         stage("foo") {
+         stage('Example') {
 	     steps {
 	         echo "flag: ${params.userflag}"
 		 echo "${params.Greeting}World!"
