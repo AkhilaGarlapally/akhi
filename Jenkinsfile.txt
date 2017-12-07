@@ -2,9 +2,9 @@ pipeline {
      agent any
      parameters {
         string(name: 'BRANCH', defaultValue: 'default', description: 'select branch name')
-	booleanParam(name: 'Rebuild_Database', defaultValue: '', description:'should we rebuild the database?')
-	booleanParam(name: 'Deploy', defaultvalue: '', description: 'should we deploy the application?')
-	choice(name: 'ENVIRONMENT', defaultvalue: 'integration', description: 'Used for posgress.sh and CodeDeploy deployment group')
+	booleanParam(name: 'Rebuild_Database', defaultValue: 'True', description:'should we rebuild the database?')
+	booleanParam(name: 'Deploy', defaultvalue: 'True', description: 'should we deploy the application?')
+	choice(name: 'ENVIRONMENT', choice: 'integration', description: 'Used for posgress.sh and CodeDeploy deployment group')
 	}
      stages{
          stage('Example') {
